@@ -26,4 +26,4 @@ export TELEGRAM_TARGET=00000000
 ./gotbot 'Teste!'
 ```
 
-> OBS.: Certifique-se de utilizar aspas simples (') para delimitar a mensagem e escapar os espaços, de outro modo o gotbot irá reclamar por ter mais de um parâmetro.
+> OBS.: Certifique-se de utilizar aspas simples (') para delimitar a mensagem e escapar os espaços, de outro modo o gotbot irá reclamar por ter mais de um parametro.
