@@ -1,18 +1,18 @@
 # Go TBOT! Go!
 
-Aplicação de linha de comando simples baseado no [Golang bindings for the Telegram Bot API](https://github.com/go-telegram-bot-api/telegram-bot-api).
+Aplicação de linha de comando simples baseado no [Golang bindings for the Telegram Bot API](https://github.com/go-telegram-bot-api/telegram-bot-api) para envio de mensagens.
 
 ## Uso
-Certifique-se de ter o pacote `go` da sua distribuição instalado e a biblioteca `telegram-bot-api` instalada e atualizada, para isso execute no terminal:
 
-`go get -u github.com/go-telegram-bot-api/telegram-bot-api`
+Certifique-se de ter o pacote `go` da sua distribuição instalado.
 
-Compile o gotbot.go: `go build gotbot.go`
+Compile o projeto: `go build .`
 
+Vai gerar um executável na pasta com o nome de `gotbot`.
 
 Para utilizar é necessário informar duas variáveis de ambientes obrigatórias e uma opcional.
 
-A variável `TELEGRAM_TOKEN` contém o token de autenticação dado pelo @BotFather.
+A variável `TELEGRAM_TOKEN` contém o token de autenticação dado pelo [@BotFather](https://telegram.me/BotFather).
 
 A variável `TELEGRAM_TARGET` contém o ChatID da conversa (individual ou grupo), leia [aqui](https://stackoverflow.com/questions/32423837/telegram-bot-how-to-get-a-group-chat-id) para entender como conseguir.
 
