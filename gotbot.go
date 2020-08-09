@@ -17,19 +17,18 @@ func main() {
 		} else {
 			fmt.Println("Falta o parametro de mensagem!")
 		}
-		fmt.Println("Uso: gobot mensagem")
+		fmt.Println("Uso: gobot 'mensagem'")
 		os.Exit(1)
 	} else if len(os.Args[1]) == 0 {
 		fmt.Println("Mensagem nula!")
-	        fmt.Println("Uso: gobot mensagem")
+		fmt.Println("Uso: gobot 'mensagem'")
 		os.Exit(1)
-        }	
-	var mensagem = os.Args[1]
-	var hora = time.Now()
-	var host, herr = os.Hostname()
-	if herr != nil {
-		log.Panic(herr)
-		os.Exit(1)
+	}
+	mensagem := os.Args[1]
+	hora := time.Now()
+	host, err := os.Hostname()
+	if err != nil {
+		host = "null"
 	}
 	if len(os.Getenv("TELEGRAM_TOKEN")) == 0 {
 		fmt.Println("Falta a variavel de ambiente TELEGRAM_TOKEN !")
@@ -38,14 +37,14 @@ func main() {
 		fmt.Println("Falta a variavel de ambiente TELEGRAM_TARGET !")
 		os.Exit(1)
 	}
-	var token = os.Getenv("TELEGRAM_TOKEN")
-	var destino, terr = strconv.Atoi(os.Getenv("TELEGRAM_TARGET"))
-	if terr != nil {
-		log.Panic(terr)
+	token := os.Getenv("TELEGRAM_TOKEN")
+	destino, err := strconv.Atoi(os.Getenv("TELEGRAM_TARGET"))
+	if err != nil {
+		log.Panic(err)
 	}
-	bot, berr := tgbotapi.NewBotAPI(token)
-	if berr != nil {
-		log.Panic(berr)
+	bot, err := tgbotapi.NewBotAPI(token)
+	if err != nil {
+		log.Panic(err)
 		os.Exit(1)
 	}
 	if os.Getenv("TBOT_DEBUG") == "1" {
